@@ -20,6 +20,27 @@ The goal of the project is to provide an easy way to store details about each fi
 - **Film roll management** &ndash; record the film type, ISO, and other relevant information for each roll.
 - **Shot tracking** &ndash; log details for every frame such as aperture, shutter speed, location, and notes.
 
+## Usage
+
+Below is a small example showing how to create a film roll and add a shot with
+additional metadata:
+
+```python
+from roll import FilmRoll
+from shot import Shot
+
+roll = FilmRoll("Vacation Roll")
+roll.add_shot(
+    Shot(
+        1,
+        "Sunrise at the beach",
+        aperture="f/11",
+        shutter_speed="1/60",
+        location="Bali",
+    )
+)
+```
+
 ## Contributing
 
 Contributions are welcome! Please open an issue to discuss ideas or bugs before submitting a pull request. Keep commits focused and include tests or examples when adding new functionality.
