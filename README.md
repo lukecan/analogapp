@@ -13,7 +13,7 @@ The goal of the project is to provide an easy way to store details about each fi
    git clone https://example.com/analogapp.git
    cd analogapp
    ```
-2. There are currently no external dependencies. Future revisions may add a small script or application. For now, explore the repository and feel free to extend it.
+2. There are currently no external dependencies. The repository ships with a simple command-line interface in `src/cli.py` and a basic Tkinter GUI in `src/gui.py`. Run either one with Python to manage rolls and shots.
 
 ## Features
 
@@ -39,6 +39,30 @@ roll.add_shot(
         location="Bali",
     )
 )
+```
+
+### Command-line interface
+
+The repository ships with a minimal CLI that stores data in `data.json`. Example usage:
+
+```bash
+# create a new roll
+python -m src.cli create-roll Vacation
+
+# add a shot to the roll
+python -m src.cli add-shot Vacation 1 "Sunrise at the beach" --aperture f/11 \
+    --shutter 1/60 --location Bali
+
+# list recorded rolls
+python -m src.cli list-rolls
+```
+
+### Graphical interface
+
+A lightweight Tkinter-based GUI is available as well. It uses the same `data.json` file to persist information.
+
+```bash
+python -m src.gui
 ```
 
 ## Contributing
